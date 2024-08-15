@@ -28,27 +28,37 @@ const Square: React.FC<IProps> = ({ square, squareIdx }) => {
   const correctWord = useSelector(
     (state: RootState) => state.squareMatrix.correctWord
   );
-  const position = useSelector((state: RootState) => state.squareMatrix.pos);
-  const state = useSelector((state: RootState) => state.squareMatrix.try);
 
-  let wordLastIndex = 4;
-  let currentPos =
-    position === 5
-      ? wordLastIndex
-      : position > 5 && position % 5 === 0
-      ? wordLastIndex
-      : (position % 5) - 1;
+  const state = useSelector((state: RootState) => state.squareMatrix.try);
 
   const [correct, setCorrect] = useState<boolean>(false);
   const [almost, setAlmost] = useState<boolean>(false);
   const [wrong, setwrong] = useState<boolean>(false);
 
+  const checkIndex = (str: string, value: string): number[] => {
+    const array: number[] = [];
+  
+    for (let i = 0; i < str.length; i++) {
+      if (str[i] === value) {
+        array.push(i);
+      }
+    }
+
+    return array
+  };
+  
+
   useEffect(() => {
-    if (correctWord[currentPos] === square) {
-      setCorrect(true);
-    } else if (!correct && square !== "" && correctWord.includes(square)) {
-      setAlmost(true);
-    } else if (!correct && square !== "" && !correctWord.includes(square)) {
+    if (square !== "" && correctWord.includes(square)) {
+      const indexArray = checkIndex(correctWord, square)
+      indexArray.forEach(index => {
+        if (index === squareIdx || index === squareIdx % 5) {
+          setCorrect(true);
+        } else {
+          setAlmost(true);
+        }
+      })
+    } else {
       setwrong(true);
     }
     return () => {
@@ -56,7 +66,7 @@ const Square: React.FC<IProps> = ({ square, squareIdx }) => {
       setAlmost(false);
       setwrong(false);
     };
-  }, [correctWord, currentPos, square, correct]);
+  }, [correctWord, square, squareIdx]);
 
   const divID: any = correct
     ? "correct"

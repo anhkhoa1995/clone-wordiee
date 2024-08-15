@@ -18,7 +18,7 @@ const Key: React.FC<IProps> = ({ letter }) => {
   const state = useSelector((state: RootState) => state.squareMatrix.try);
 
   const chooseLetter = () => {
-    if (position >= 30) return;
+    if (position >= 25) return;
     else if (key === "Enter") {
       const newMatrix = [...matrix];
       newMatrix[position] = letter;

@@ -55,8 +55,6 @@ const Board: React.FC = () => {
     (state: RootState) => state.squareMatrix.correctWord
   );
 
-  console.log(3, correctWord);
-
   // const backHome = () => {
   //   navigate("/");
   // };

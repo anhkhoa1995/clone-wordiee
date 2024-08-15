@@ -2,21 +2,24 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import { useNavigate } from "react-router-dom";
 
-import Keyboard from "../../components/organisms/Keyboard";
-import SquareMatrix from "../../components/organisms/SquareMatrix";
 import Button from "../../components/atoms/Button";
 import Tag from "../../components/atoms/Tag";
 import Input from "../../components/atoms/Input";
 import Alert from "../../components/molecules/Alert";
+import Keyboard from "../../components/organisms/Keyboard";
+import SquareMatrix from "../../components/organisms/SquareMatrix";
 
-import { IRoot } from "../../types/square-matrix";
-import { setCorrectWord, resetMatrix } from "../../stores/matrixSlice";
 import { IAlert } from "../../types/common";
+
+import { RootState } from "../../stores/rootReducer";
+import { setCorrectWord, resetMatrix } from "../../stores/actions/matrixAction";
+
+
 
 const Board: React.FC = () => {
   // const navigate = useNavigate();
   const dispatch = useDispatch();
-  const number = useSelector((state: IRoot) => state.squareMatrix.number);
+  const number = useSelector((state: RootState) => state.squareMatrix.number);
   const [finalResult, setFinalResult] = useState<string>("");
 
   const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -47,9 +50,9 @@ const Board: React.FC = () => {
   }, [number]);
 
   // Board 5x5
-  const matrix = useSelector((state: IRoot) => state.squareMatrix.matrix);
+  const matrix = useSelector((state: RootState) => state.squareMatrix.matrix);
   const correctWord = useSelector(
-    (state: IRoot) => state.squareMatrix.correctWord
+    (state: RootState) => state.squareMatrix.correctWord
   );
 
   console.log(3, correctWord);

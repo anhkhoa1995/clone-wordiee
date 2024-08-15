@@ -1,8 +1,8 @@
 import { configureStore } from "@reduxjs/toolkit";
-import matrixReducer from "./matrixSlice";
+import rootReducer from "./rootReducer";
 
-export default configureStore({
-  reducer: {
-    squareMatrix: matrixReducer,
-  },
+const store = configureStore({
+  reducer: rootReducer,
 });
+
+export default store;

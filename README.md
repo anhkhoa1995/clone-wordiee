@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Clone Wordiee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Get ideas from wordiee game and a sample project from github.
 
 ## Available Scripts
 

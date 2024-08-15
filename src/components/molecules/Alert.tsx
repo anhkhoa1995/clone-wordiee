@@ -1,6 +1,7 @@
-import { IAlert } from "../../types/common";
 import Button from "../atoms/Button";
 import Tag from "../atoms/Tag";
+
+import { IAlert } from "../../types/common";
 
 const Alert: React.FC<IAlert> = ({
   type = "info",

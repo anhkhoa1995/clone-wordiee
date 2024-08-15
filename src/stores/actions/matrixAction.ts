@@ -1,18 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-
-// Hàm để khởi tạo trạng thái ban đầu
-const getInitialState = () => {
-  return {
-    matrix: new Array(25).fill(""),
-    try: 0,
-    pos: 0,
-    key: "",
-    correctWord: "",
-    number: 0,
-  };
-};
-
-const initialState = getInitialState();
+import initialState from "../states/matrixState";
 
 export const matrixSlice = createSlice({
   name: "matrix",
@@ -56,4 +43,3 @@ export const {
   incTry,
   resetMatrix,
 } = matrixSlice.actions;
-export default matrixSlice.reducer;

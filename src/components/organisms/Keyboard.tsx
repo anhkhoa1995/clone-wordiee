@@ -1,26 +1,28 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
+import Tag from "../atoms/Tag";
 import Key from "../molecules/Key";
 import Alert from "../molecules/Alert";
-import Tag from "../atoms/Tag";
 
-import { IRoot } from "../../types/square-matrix";
+
 import { IAlert } from "../../types/common";
 
-import { decPos, incTry, setMatrix, setKey } from "../../stores/matrixSlice";
+import { RootState } from "../../stores/rootReducer";
+import { decPos, incTry, setMatrix, setKey } from "../../stores/actions/matrixAction";
+
 
 const Keyboard: React.FC = () => {
   const dispatch = useDispatch();
   const [showAlert, setShowAlert] = useState<boolean>(false);
   const [propAlert, setPropAlert] = useState<IAlert | null>(null);
 
-  const state = useSelector((state: IRoot) => state.squareMatrix.try);
-  const matrix = useSelector((state: IRoot) => state.squareMatrix.matrix);
-  const position = useSelector((state: IRoot) => state.squareMatrix.pos);
-  const key = useSelector((state: IRoot) => state.squareMatrix.key);
+  const state = useSelector((state: RootState) => state.squareMatrix.try);
+  const matrix = useSelector((state: RootState) => state.squareMatrix.matrix);
+  const position = useSelector((state: RootState) => state.squareMatrix.pos);
+  const key = useSelector((state: RootState) => state.squareMatrix.key);
   // const correctWord = useSelector(
-  //   (state: IRoot) => state.squareMatrix.correctWord
+  //   (state: RootState) => state.squareMatrix.correctWord
   // );
 
   let matrix5Words: string = `${matrix[position - 5]}${matrix[position - 4]}${

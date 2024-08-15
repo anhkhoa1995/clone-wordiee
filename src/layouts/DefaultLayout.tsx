@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom";
+
 import Tag from "../components/atoms/Tag";
 
 const DefaultLayout: React.FC = () => {
   return (
     <div className="default-layout">
       <header>
-        <Tag tag="h1">Fake Wordiee</Tag>
+        <Tag tag="h1">Clone Wordiee</Tag>
       </header>
       <main>
         <Outlet /> {/* Đây là nơi render các route con */}

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { motion } from "framer-motion";
 
-import { IRoot } from "../../types/square-matrix";
+import { RootState } from "../../stores/rootReducer";
 
 interface IProps {
   square: string;
@@ -26,10 +26,10 @@ const Square: React.FC<IProps> = ({ square, squareIdx }) => {
   };
 
   const correctWord = useSelector(
-    (state: IRoot) => state.squareMatrix.correctWord
+    (state: RootState) => state.squareMatrix.correctWord
   );
-  const position = useSelector((state: IRoot) => state.squareMatrix.pos);
-  const state = useSelector((state: IRoot) => state.squareMatrix.try);
+  const position = useSelector((state: RootState) => state.squareMatrix.pos);
+  const state = useSelector((state: RootState) => state.squareMatrix.try);
 
   let wordLastIndex = 4;
   let currentPos =

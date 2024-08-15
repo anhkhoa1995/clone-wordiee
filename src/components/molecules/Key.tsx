@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Tag from "../atoms/Tag";
 
-import { IRoot } from "../../types/square-matrix";
+import { RootState } from "../../stores/rootReducer";
+import { incPos, setMatrix, setKey } from "../../stores/actions/matrixAction";
 
-import { incPos, setMatrix, setKey } from "../../stores/matrixSlice";
 
 interface IProps {
   letter: string;
@@ -12,10 +12,10 @@ interface IProps {
 
 const Key: React.FC<IProps> = ({ letter }) => {
   const dispatch = useDispatch();
-  const matrix = useSelector((state: IRoot) => state.squareMatrix.matrix);
-  const position = useSelector((state: IRoot) => state.squareMatrix.pos);
-  const key = useSelector((state: IRoot) => state.squareMatrix.key);
-  const state = useSelector((state: IRoot) => state.squareMatrix.try);
+  const matrix = useSelector((state: RootState) => state.squareMatrix.matrix);
+  const position = useSelector((state: RootState) => state.squareMatrix.pos);
+  const key = useSelector((state: RootState) => state.squareMatrix.key);
+  const state = useSelector((state: RootState) => state.squareMatrix.try);
 
   const chooseLetter = () => {
     if (position >= 30) return;

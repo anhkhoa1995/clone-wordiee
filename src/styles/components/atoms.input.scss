@@ -1,0 +1,33 @@
+input {
+  height: 2.5rem;
+  padding: 0.6rem;
+  border: 1px solid #dddddd;
+  border-radius: $border-rounded-sm;
+  outline: none;
+  font-size: $font-md;
+  font-weight: $font-medium;
+}
+
+@media screen and (min-width: #{map-get($breakpoints, xxs)}) {
+  input {
+    height: 2rem;
+    padding: 0.4rem;
+    font-size: $font-sm;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  input {
+    height: 2rem;
+    padding: 0.5rem;
+    font-size: $font-sm;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  input {
+    height: 2.5rem;
+    padding: 0.6rem;
+    font-size: $font-md;
+  }
+}

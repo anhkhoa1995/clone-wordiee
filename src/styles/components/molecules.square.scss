@@ -1,0 +1,61 @@
+.square {
+  font-size: 2rem;
+  height: 3rem;
+  width: 3rem;
+  text-align: center;
+  border: 2px solid $color-light-blue;
+  background: none;
+  cursor: pointer;
+  place-items: center;
+}
+
+#correct {
+  border: none;
+  animation: flip 1s linear;
+  background-color: rgb(3, 164, 100);
+}
+
+#almost {
+  animation: flip 1s linear;
+  border: none;
+  background-color: rgb(255, 213, 0);
+}
+
+#wrong {
+  animation: flip 1s linear;
+  border: none;
+  background-color: rgb(72, 72, 72);
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+  100% {
+    transform: rotateX(360deg);
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xxs)}) {
+  .square {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  .square {
+    font-size: 1.5rem;
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  .square {
+    font-size: 2rem;
+    height: 3rem;
+    width: 3rem;
+  }
+}

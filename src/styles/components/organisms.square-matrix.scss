@@ -1,0 +1,27 @@
+.square-matrix {
+  color: white;
+  display: grid;
+  align-self: center;
+  justify-content: center;
+  gap: 0.25rem;
+  background-color: $color-dark-blue;
+  grid-template-columns: repeat(5, 0fr);
+}
+
+@media (min-width: #{map-get($breakpoints, xxs)}) {
+  .square-matrix {
+    gap: 0.15rem;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  .square-matrix {
+    gap: 0.15rem;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  .square-matrix {
+    gap: 0.15rem;
+  }
+}

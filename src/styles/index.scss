@@ -1,0 +1,24 @@
+@import "./variables.scss";
+@import "./base.scss";
+
+/* Layouts style */
+@import "./layout.default.scss";
+
+/* Views Style */
+@import "./views/home.scss";
+@import "./views/board.scss";
+
+
+/* Organisms Components Style */
+@import "./components/organisms.keyboard.scss";
+@import "./components/organisms.square-matrix.scss";
+
+/* Molecules Components Style */
+@import "./components/molecules.alert.scss";
+@import "./components/molecules.key.scss";
+@import "./components/molecules.square.scss";
+
+/* Atoms Components Style */
+@import "./components/atoms.button.scss";
+@import "./components/atoms.input.scss";
+@import "./components/atoms.tag.scss";

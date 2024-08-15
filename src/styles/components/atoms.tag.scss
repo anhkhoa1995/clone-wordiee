@@ -1,0 +1,22 @@
+/* Styles h1, h2,... */
+p, label {
+  font-size: $font-md;
+}
+
+@media (min-width: #{map-get($breakpoints, xxs)}) {
+  p, label {
+    font-size: $font-sm;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  p, label {
+    font-size: $font-sm;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  p, label {
+    font-size: $font-md;
+  }
+}

@@ -1,0 +1,575 @@
+.alert {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  .alert-container {
+    width: 28rem;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+
+    &.alert-warning {
+      color: $color-warning-8;
+
+      .header {
+        height: 3.25rem;
+        width: 100%;
+        border-bottom: 1px solid $color-light-8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 0.6rem 0.6rem 1rem;
+
+        span {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            background: #dddddd;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      .content {
+        padding: 0.6rem 1rem;
+        font-size: $font-sm;
+        font-weight: $font-light;
+        line-height: 2;
+      }
+
+      .footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 1rem;
+        gap: 1rem;
+
+        .btn-ok {
+          padding: 0.5rem 1rem;
+          background: $color-light-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-warning-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-light);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-cancel {
+          padding: 0.5rem 1rem;
+          background: transparent;
+          border: 1px solid $color-warning-8;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-warning-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-warning-8);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-confirm {
+          padding: 0.5rem 1rem;
+          background: $color-warning-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: #ffffff;
+          cursor: pointer;
+
+          &:disabled {
+            background: $color-light-8;
+            color: $color-gray-8;
+            cursor: not-allowed; // Thay đổi con trỏ khi bị disabled
+            filter: none; // Không áp dụng hiệu ứng hover khi bị disabled
+          }
+
+          // Đảm bảo không có hiệu ứng hover khi nút bị disabled
+          &:not(:disabled):hover {
+            filter: drop-shadow(0px 0px 4px $color-warning-8);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+
+    &.alert-danger {
+      color: $color-error-8;
+
+      .header {
+        height: 3.25rem;
+        width: 100%;
+        border-bottom: 1px solid $color-light-8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 0.6rem 0.6rem 1rem;
+
+        span {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            background: #dddddd;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      .content {
+        padding: 0.6rem 1rem;
+        font-size: $font-sm;
+        font-weight: $font-light;
+        line-height: 2;
+      }
+
+      .footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 1rem;
+        gap: 1rem;
+
+        .btn-ok {
+          padding: 0.5rem 1rem;
+          background: $color-light-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-error-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-light);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-cancel {
+          padding: 0.5rem 1rem;
+          background: transparent;
+          border: 1px solid $color-error-8;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-error-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-error-8);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-confirm {
+          padding: 0.5rem 1rem;
+          background: $color-error-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: #ffffff;
+          cursor: pointer;
+
+          &:disabled {
+            background: $color-light-8;
+            color: $color-gray-8;
+            cursor: not-allowed; // Thay đổi con trỏ khi bị disabled
+            filter: none; // Không áp dụng hiệu ứng hover khi bị disabled
+          }
+
+          // Đảm bảo không có hiệu ứng hover khi nút bị disabled
+          &:not(:disabled):hover {
+            filter: drop-shadow(0px 0px 4px $color-error-8);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+
+    &.alert-success {
+      color: $color-success-8;
+
+      .header {
+        height: 3.25rem;
+        width: 100%;
+        border-bottom: 1px solid $color-light-8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 0.6rem 0.6rem 1rem;
+
+        span {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            background: #dddddd;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      .content {
+        padding: 0.6rem 1rem;
+        font-size: $font-sm;
+        font-weight: $font-light;
+        line-height: 2;
+      }
+
+      .footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 1rem;
+        gap: 1rem;
+
+        .btn-ok {
+          padding: 0.5rem 1rem;
+          background: $color-light-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-success-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-light);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-cancel {
+          padding: 0.5rem 1rem;
+          background: transparent;
+          border: 1px solid $color-success-8;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-success-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-success-8);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-confirm {
+          padding: 0.5rem 1rem;
+          background: $color-success-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: #ffffff;
+          cursor: pointer;
+
+          &:disabled {
+            background: $color-light-8;
+            color: $color-gray-8;
+            cursor: not-allowed; // Thay đổi con trỏ khi bị disabled
+            filter: none; // Không áp dụng hiệu ứng hover khi bị disabled
+          }
+
+          // Đảm bảo không có hiệu ứng hover khi nút bị disabled
+          &:not(:disabled):hover {
+            filter: drop-shadow(0px 0px 4px $color-warning-8);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+
+    &.alert-info {
+      color: $color-info-8;
+
+      .header {
+        height: 3.25rem;
+        width: 100%;
+        border-bottom: 1px solid $color-light-8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0.6rem 0.6rem 0.6rem 1rem;
+
+        span {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          position: relative;
+          cursor: pointer;
+
+          i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+
+          &:hover {
+            background: #dddddd;
+            transition: 0.3s;
+          }
+        }
+      }
+
+      .content {
+        padding: 0.6rem 1rem;
+        font-size: $font-sm;
+        font-weight: $font-light;
+      }
+
+      .footer {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: end;
+        padding: 1rem;
+        gap: 1rem;
+
+        .btn-ok {
+          padding: 0.5rem 1rem;
+          background: $color-light-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-info-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-light);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-cancel {
+          padding: 0.5rem 1rem;
+          background: transparent;
+          border: 1px solid $color-info-8;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: $color-info-8;
+          cursor: pointer;
+
+          &:hover {
+            filter: drop-shadow(0px 0px 4px $color-info-8);
+            transition: 0.3s;
+          }
+        }
+
+        .btn-confirm {
+          padding: 0.5rem 1rem;
+          background: $color-info-8;
+          border: none;
+          border-radius: $border-rounded-sm;
+          font-size: $font-sm;
+          font-weight: $font-semibold;
+          color: #ffffff;
+          cursor: pointer;
+
+          &:disabled {
+            background: $color-light-8;
+            color: $color-gray-8;
+            cursor: not-allowed; // Thay đổi con trỏ khi bị disabled
+            filter: none; // Không áp dụng hiệu ứng hover khi bị disabled
+          }
+
+          // Đảm bảo không có hiệu ứng hover khi nút bị disabled
+          &:not(:disabled):hover {
+            filter: drop-shadow(0px 0px 4px $color-info-8);
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xxs)}) {
+  .alert {
+    .alert-container {
+      width: 18rem;
+  
+      &.alert-warning,
+      &.alert-danger,
+      &.alert-success,
+      &.alert-info {
+        .header {
+          height: 2.75rem;
+          padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+  
+          span {
+            width: 1.75rem;
+            height: 1.75rem;
+          }
+        }
+  
+        .content {
+          padding: 0.4rem 0.8rem;
+        }
+  
+        .footer {
+          padding: 0.8rem;
+          gap: 0.8rem;
+  
+          .btn-ok {
+            padding: 0.4rem 0.8rem;
+          }
+  
+          .btn-cancel {
+            padding: 0.4rem 0.8rem;
+          }
+  
+          .btn-confirm {
+            padding: 0.4rem 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  .alert {
+    .alert-container {
+      width: 23rem;
+  
+      &.alert-warning,
+      &.alert-danger,
+      &.alert-success,
+      &.alert-info {
+        .header {
+          height: 2.75rem;
+          padding: 0.4rem 0.4rem 0.4rem 0.8rem;
+  
+          span {
+            width: 1.75rem;
+            height: 1.75rem;
+          }
+        }
+  
+        .content {
+          padding: 0.4rem 0.8rem;
+        }
+  
+        .footer {
+          padding: 0.8rem;
+          gap: 0.8rem;
+  
+          .btn-ok {
+            padding: 0.4rem 0.8rem;
+          }
+  
+          .btn-cancel {
+            padding: 0.4rem 0.8rem;
+          }
+  
+          .btn-confirm {
+            padding: 0.4rem 0.8rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  .alert {
+    .alert-container {
+      width: 28rem;
+  
+      &.alert-warning,
+      &.alert-danger,
+      &.alert-success,
+      &.alert-info {
+        .header {
+          height: 3.25rem;
+          padding: 0.6rem 0.6rem 0.6rem 1rem;
+  
+          span {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+  
+        .content {
+          padding: 0.6rem 1rem;
+        }
+  
+        .footer {
+          padding: 1rem;
+          gap: 1rem;
+  
+          .btn-ok {
+            padding: 0.5rem 1rem;
+          }
+  
+          .btn-cancel {
+            padding: 0.5rem 1rem;
+          }
+  
+          .btn-confirm {
+            padding: 0.5rem 1rem;
+          }
+        }
+      }
+    }
+  }
+}

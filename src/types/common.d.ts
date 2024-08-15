@@ -74,4 +74,9 @@ interface IAlert {
   handleClickOutside?: (e: React.MouseEvent<HTMLElement>) => void;
 }
 
-export { ITag, IInput, IButton, IAlert };
+interface ILoader {
+  size?: number;
+  color?: string;
+}
+
+export { ITag, IInput, IButton, IAlert, ILoader };

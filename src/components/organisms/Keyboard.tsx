@@ -5,12 +5,16 @@ import Tag from "../atoms/Tag";
 import Key from "../molecules/Key";
 import Alert from "../molecules/Alert";
 
-
 import { IAlert } from "../../types/common";
 
 import { RootState } from "../../stores/rootReducer";
-import { decPos, incTry, setMatrix, setKey } from "../../stores/actions/matrixAction";
-
+import {
+  decPos,
+  incTry,
+  setMatrix,
+  setKey,
+} from "../../stores/actions/matrixAction";
+import Loader from "../atoms/Loader";
 
 const Keyboard: React.FC = () => {
   const dispatch = useDispatch();
@@ -21,44 +25,44 @@ const Keyboard: React.FC = () => {
   const matrix = useSelector((state: RootState) => state.squareMatrix.matrix);
   const position = useSelector((state: RootState) => state.squareMatrix.pos);
   const key = useSelector((state: RootState) => state.squareMatrix.key);
-  // const correctWord = useSelector(
-  //   (state: RootState) => state.squareMatrix.correctWord
-  // );
 
   let matrix5Words: string = `${matrix[position - 5]}${matrix[position - 4]}${
     matrix[position - 3]
   }${matrix[position - 2]}${matrix[position - 1]}`.toLowerCase();
   const rows = ["q w e r t y u i o p", "a s d f g h j k l", "z x c v b n m"];
 
+  const [waiting, setWaiting] = useState<boolean>(false)
+
   const clickEnter = async () => {
+    setWaiting(true)
     const check = await checkSpelling(matrix5Words);
-    if (key !== "Enter") {
-      if (check) {
-        if (
-          position % 5 === 0 &&
-          position !== 0 &&
-          (position - 1) / 5 > state
-        ) {
-          dispatch(incTry());
+    setTimeout(() => {
+      if (key !== "Enter") {
+        if (check) {
+          if (
+            position % 5 === 0 &&
+            position !== 0 &&
+            (position - 1) / 5 > state
+          ) {
+            dispatch(incTry());
+          }
+          dispatch(setKey("Enter"));
+        } else {
+          setShowAlert(true);
+          setPropAlert({
+            type: "warning",
+            title: "Warning",
+            children: (
+              <>
+                <Tag>Invalid words!</Tag>
+                <Tag>Let's try again!</Tag>
+              </>
+            ),
+          });
         }
-        dispatch(setKey("Enter"));
-      } else {
-        setShowAlert(true);
-        setPropAlert({
-          type: "warning",
-          title: "Warning",
-          children: <><Tag>Invalid words!</Tag><Tag>Let's try again!</Tag></>,
-        });
       }
-    }
-    // if (position === 25 && check) {
-    //   setShowAlert(true);
-    //   setPropAlert({
-    //     type: "success",
-    //     title: "Congratulation",
-    //     content: "The word is: " + correctWord,
-    //   });
-    // }
+      setWaiting(false)
+    }, 600)
   };
 
   const clickBack = () => {
@@ -132,6 +136,9 @@ const Keyboard: React.FC = () => {
           {propAlert?.children}
         </Alert>
       )}
+      {
+        waiting && <Loader />
+      }
     </div>
   );
 };

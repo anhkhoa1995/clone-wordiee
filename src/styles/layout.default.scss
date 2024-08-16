@@ -1,5 +1,11 @@
+/*NOTE - Using unit height (Depends on browser navigation bar)
+* vh: Standard viewport height
+* dvh: Dynamic viewport height
+* lvh: Maximum possible height
+* svh: Minimum possible height
+*/
 .default-layout {
-  height: 100vh;
+  height: 100dvh; // Dynamic viewport height
   padding: 2rem;
   display: flex;
   flex-direction: column;

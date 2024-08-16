@@ -35,22 +35,19 @@ const Square: React.FC<IProps> = ({ square, squareIdx }) => {
   const [almost, setAlmost] = useState<boolean>(false);
   const [wrong, setwrong] = useState<boolean>(false);
 
-  const checkIndex = (str: string, value: string): number[] => {
+  const findAllIndex = (str: string, value: string): number[] => {
     const array: number[] = [];
-  
     for (let i = 0; i < str.length; i++) {
       if (str[i] === value) {
         array.push(i);
       }
     }
-
     return array
   };
   
-
   useEffect(() => {
     if (square !== "" && correctWord.includes(square)) {
-      const indexArray = checkIndex(correctWord, square)
+      const indexArray = findAllIndex(correctWord, square)
       indexArray.forEach(index => {
         if (index === squareIdx || index === squareIdx % 5) {
           setCorrect(true);
@@ -68,7 +65,7 @@ const Square: React.FC<IProps> = ({ square, squareIdx }) => {
     };
   }, [correctWord, square, squareIdx]);
 
-  const divID: any = correct
+  const divID: string = correct
     ? "correct"
     : almost
     ? "almost"

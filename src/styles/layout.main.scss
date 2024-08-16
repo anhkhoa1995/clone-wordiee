@@ -4,8 +4,12 @@
 * lvh: Maximum possible height
 * svh: Minimum possible height
 */
-.default-layout {
+.main-layout {
   height: 100dvh; // Dynamic viewport height
   padding: 2rem;
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
 }

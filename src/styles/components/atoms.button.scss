@@ -29,11 +29,11 @@ button {
     padding: 0.5rem 1rem;
     border-radius: $border-rounded-sm;
     background: $color-light-blue;
-    font-size: $font-sm;
+    font-size: $font-xs;
     gap: 0.3rem;
 
     i {
-      font-size: $font-sm;
+      font-size: $font-xs;
     }
   }
 }
@@ -44,11 +44,11 @@ button {
     padding: 0.5rem 1rem;
     border-radius: $border-rounded-sm;
     background: $color-light-blue;
-    font-size: $font-sm;
+    font-size: $font-xs;
     gap: 0.4rem;
 
     i {
-      font-size: $font-sm;
+      font-size: $font-xs;
     }
   }
 }

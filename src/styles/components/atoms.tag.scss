@@ -5,13 +5,13 @@ p, label {
 
 @media (min-width: #{map-get($breakpoints, xxs)}) {
   p, label {
-    font-size: $font-sm;
+    font-size: $font-xs;
   }
 }
 
 @media (min-width: #{map-get($breakpoints, xs)}) {
   p, label {
-    font-size: $font-sm;
+    font-size: $font-xs;
   }
 }
 

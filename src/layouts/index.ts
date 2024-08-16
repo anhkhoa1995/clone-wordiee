@@ -1,3 +1,4 @@
 import DefaultLayout from "./DefaultLayout";
+import MainLayout from "./MainLayout";
 
-export { DefaultLayout }
+export { DefaultLayout, MainLayout }

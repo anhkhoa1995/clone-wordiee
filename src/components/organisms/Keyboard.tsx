@@ -31,10 +31,10 @@ const Keyboard: React.FC = () => {
   }${matrix[position - 2]}${matrix[position - 1]}`.toLowerCase();
   const rows = ["q w e r t y u i o p", "a s d f g h j k l", "z x c v b n m"];
 
-  const [waiting, setWaiting] = useState<boolean>(false)
+  const [waiting, setWaiting] = useState<boolean>(false);
 
   const clickEnter = async () => {
-    setWaiting(true)
+    setWaiting(true);
     const check = await checkSpelling(matrix5Words);
     setTimeout(() => {
       if (key !== "Enter") {
@@ -61,8 +61,8 @@ const Keyboard: React.FC = () => {
           });
         }
       }
-      setWaiting(false)
-    }, 600)
+      setWaiting(false);
+    }, 600);
   };
 
   const clickBack = () => {
@@ -108,7 +108,7 @@ const Keyboard: React.FC = () => {
           {index === 2 && (
             <div className="letter-row" onClick={clickBack}>
               <Tag tag="span" className="letter letter-keyback">
-                Back
+                <i className="fa-solid fa-delete-left"></i>
               </Tag>
             </div>
           )}
@@ -136,9 +136,7 @@ const Keyboard: React.FC = () => {
           {propAlert?.children}
         </Alert>
       )}
-      {
-        waiting && <Loader />
-      }
+      {waiting && <Loader />}
     </div>
   );
 };

@@ -1,5 +1,5 @@
 .square {
-  font-size: 2rem;
+  font-size: $font-xxl;
   height: 3rem;
   width: 3rem;
   text-align: center;
@@ -38,7 +38,7 @@
 
 @media (min-width: #{map-get($breakpoints, xxs)}) {
   .square {
-    font-size: 1.2rem;
+    font-size: $font-lg;
     height: 2rem;
     width: 2rem;
   }
@@ -46,7 +46,7 @@
 
 @media (min-width: #{map-get($breakpoints, xs)}) {
   .square {
-    font-size: 1.5rem;
+    font-size: $font-xl;
     height: 2.5rem;
     width: 2.5rem;
   }
@@ -54,7 +54,7 @@
 
 @media (min-width: #{map-get($breakpoints, sm)}) {
   .square {
-    font-size: 2rem;
+    font-size: $font-xxl;
     height: 3rem;
     width: 3rem;
   }

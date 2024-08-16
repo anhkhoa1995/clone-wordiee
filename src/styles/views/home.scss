@@ -1,8 +1,145 @@
 .home-container {
+  width: calc(100% - 4rem);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 2rem;
+
+  img {
+    width: 6rem;
+  }
+
+  .game-description {
+    text-align: center;
+    font-size: $font-xl;
+    font-weight: $font-light;
+  }
+
+  .group-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+    .btn-play,
+    .btn-github {
+      padding: 0.625rem;
+      width: 8rem;
+      text-align: center;
+      border: none;
+      border-radius: $border-rounded-sm;
+      background: $color-light-blue;
+      font-size: $font-md;
+      font-weight: $font-medium;
+      cursor: pointer;
+
+      a {
+        color: #ffffff;
+        text-decoration: none;
+      }
+
+      &:hover {
+        filter: drop-shadow(0px 0px 4px $color-light-blue);
+        transition: 0.3s;
+      }
+    }
+  }
+
+  .game-source {
+    text-align: center;
+    font-size: $font-xs;
+    font-weight: $font-light;
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xxs)}) {
+  .home-container {
+    gap: 2rem;
+  
+    img {
+      width: 6rem;
+    }
+  
+    .game-description {
+      font-size: $font-xl;
+    }
+  
+    .group-btn {
+      gap: 0.8rem;
+  
+      .btn-play,
+      .btn-github {
+        padding: 0.625rem;
+        width: 8rem;
+        font-size: $font-md;
+      }
+    }
+  
+    .game-source {
+      font-size: $font-xs;
+    }
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, xs)}) {
+  .home-container {
+    gap: 2rem;
+  
+    img {
+      width: 6rem;
+    }
+  
+    .game-description {
+      font-size: $font-xl;
+    }
+  
+    .group-btn {
+      gap: 0.8rem;
+  
+      .btn-play,
+      .btn-github {
+        padding: 0.625rem;
+        width: 8rem;
+        font-size: $font-md;
+      }
+    }
+  
+    .game-source {
+      font-size: $font-sm;
+    }
+  }
+}
+
+@media (min-width: #{map-get($breakpoints, sm)}) {
+  .home-container {
+    gap: 2rem;
+  
+    img {
+      width: 6rem;
+    }
+  
+    .game-description {
+      font-size: $font-xl;
+    }
+  
+    .group-btn {
+      gap: 0.8rem;
+  
+      .btn-play,
+      .btn-github {
+        padding: 0.625rem;
+        width: 8rem;
+        font-size: $font-md;
+      }
+    }
+  
+    .game-source {
+      font-size: $font-md;
+    }
+  }
 }

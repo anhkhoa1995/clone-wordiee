@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import Button from "../../components/atoms/Button";
 import Tag from "../../components/atoms/Tag";
@@ -17,7 +17,7 @@ import { setCorrectWord, resetMatrix } from "../../stores/actions/matrixAction";
 
 
 const Board: React.FC = () => {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const number = useSelector((state: RootState) => state.squareMatrix.number);
   const [finalResult, setFinalResult] = useState<string>("");
@@ -55,9 +55,9 @@ const Board: React.FC = () => {
     (state: RootState) => state.squareMatrix.correctWord
   );
 
-  // const backHome = () => {
-  //   navigate("/");
-  // };
+  const backHome = () => {
+    navigate("/");
+  };
 
   const resetGame = () => {
     setFinalResult("");
@@ -127,9 +127,9 @@ const Board: React.FC = () => {
       <SquareMatrix matrix={matrix} />
       <Keyboard />
       <div className="panigation">
-        {/* <Button onClick={backHome}>
+        <Button onClick={backHome}>
           <i className="fa-solid fa-dice-d6"></i>Home
-        </Button> */}
+        </Button>
         <Button onClick={resetGame}>
           <i className="fa-solid fa-rotate"></i>Reset
         </Button>

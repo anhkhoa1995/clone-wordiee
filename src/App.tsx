@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import { DefaultLayout } from "./layouts";
+import { DefaultLayout, MainLayout } from "./layouts";
 
-// import { Home } from "./views/home";
+import { Home } from "./views/home";
 import { Board } from "./views/board";
 
 const router = createBrowserRouter([
@@ -11,17 +11,19 @@ const router = createBrowserRouter([
     element: <DefaultLayout />, // Sử dụng layout để dễ dàng mở rộng project
     children: [
       {
+        element: <Home />,
+        index: true,
+      },
+    ],
+  },
+  {
+    path: "/board",
+    element: <MainLayout />, // Sử dụng layout để dễ dàng mở rộng project
+    children: [
+      {
         element: <Board />,
         index: true,
       },
-      // {
-      //   element: <Home />,
-      //   index: true,
-      // },
-      // {
-      //   path: "board",
-      //   element: <Board />,
-      // },
     ],
   },
 ]);

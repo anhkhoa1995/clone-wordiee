@@ -17,7 +17,7 @@ const Home: React.FC = () => {
           <Link to="/board">Play</Link>
         </Tag>
         <Tag tag="span" className="btn-github">
-          <Link to="https://github.com/anhkhoa1995/clone-wordiee">GitHub</Link>
+          <Link to="https://github.com/anhkhoa1995/clone-wordiee" target="_blank">GitHub</Link>
         </Tag>
       </div>
       <Tag tag="p" className="game-source">

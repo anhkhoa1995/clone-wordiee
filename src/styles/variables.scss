@@ -1,11 +1,3 @@
-/* Break Point */
-
-/* Using Break Point */
-// Desktop first max-width, Mobile first min-width
-// @media (min-width: #{map-get($breakpoints, sm)}) {
-//   padding: 15px;
-// }
-
 $breakpoints: (
   xxs: 350px,  // Extra extra small
   xs: 480px,  // Extra small devices (portrait phones)
@@ -15,47 +7,4 @@ $breakpoints: (
   xl: 1600px,  // Extra large devices (large desktops)
   xxl: 2000px, // Extra extra large
 );
-
-/* Color */
-$color-info: #3195a5;
-$color-info-8: rgba($color-info, 0.8);
-$color-success: #3e884f;
-$color-success-8: rgba($color-success, 0.8);
-$color-warning: #b69329;
-$color-warning-8: rgba($color-warning, 0.8);
-$color-warning-light: #ffd43b;
-$color-error: #c43d4b;
-$color-error-8: rgba($color-error, 0.8);
-$color-gray: #686868;
-$color-gray-8: rgba($color-gray, 0.8);
-$color-light: #dddddd;
-$color-light-8: rgba($color-light, 0.8);
-$color-light-blue: #6EB9E3;
-$color-light-blue-8: rgba($color-light-blue, 0.8);
-$color-dark: #222222;
-$color-dark-8: rgba($color-dark, 0.8);
-$color-dark-blue: #151924;
-$color-dark-blue-8: rgba($color-dark-blue, 0.8);
-
-/* Border Radius */
-$border-rounded-sm: 0.25rem;
-$border-rounded-md: 0.5rem;
-$border-rounded: 0.875rem;
-
-/* Font Size */
-$font-xs: 0.7rem;
-$font-sm: 0.85rem;
-$font-md: 1rem;
-$font-lg: 1.2rem;
-$font-xl: 1.5rem;
-$font-xxl: 2rem;
-
-/* Font Weight */
-$font-light: 300;
-$font-medium: 400;
-$font-semibold: 500;
-$font-bold: 600;
-
-/* Font Family */
-$font-poppins: "Poppins", sans-serif;
 
